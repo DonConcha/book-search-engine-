@@ -130,8 +130,9 @@ const SearchBooks = () => {
                     <Card.Title>{book.title}</Card.Title>
                     <p className='small'>Authors: {book.authors}</p>
                     <Card.Text>{book.description}</Card.Text>
+                    <Button className='btn-block' variant='primary' href={book.link}> link </Button>
                     {Auth.loggedIn() && (
-                      <Button
+                      <Button 
                         disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
                         className='btn-block btn-info'
                         onClick={() => handleSaveBook(book.bookId)}>
